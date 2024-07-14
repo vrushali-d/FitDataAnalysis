@@ -1,4 +1,26 @@
 import chalk from "chalk";
+
+export function daysInMonth(month, year) {
+  // Month in JavaScript is 0-indexed (January is 0, February is 1, etc).
+  // By using 0 as the day, we get the last day of the prior month.
+  return new Date(year, month, 0).getDate();
+}
+
+export const months = {
+  january: 0,
+  february: 1,
+  march: 2,
+  april: 3,
+  may: 4,
+  june: 5,
+  july: 6,
+  august: 7,
+  september: 8,
+  october: 9,
+  november: 10,
+  december: 11,
+};
+
 export function printCalendar(year, month, highlightDays) {
   const daysInMonth = new Date(year, month, 0).getDate();
   const monthName = new Date(year, month - 1).toLocaleString("default", {

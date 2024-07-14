@@ -1,10 +1,11 @@
 #! /usr/bin/env node
 import fs from "node:fs";
-import readline from "node:readline";
-import { printCalendar } from "./calendar.js";
-import select, { Separator } from "@inquirer/select";
 import { exit } from "node:process";
+import select from "@inquirer/select";
 import confirm from "@inquirer/confirm";
+import { printCalendar } from "./calendar.js";
+import { months } from "./calendar.js";
+import { daysInMonth } from "./calendar.js";
 
 let uniqueActivities = new Set();
 
@@ -41,36 +42,15 @@ for (let file of files) {
     console.error(err);
   }
 }
-function daysInMonth(month, year) {
-  // Month in JavaScript is 0-indexed (January is 0, February is 1, etc).
-  // By using 0 as the day, we get the last day of the prior month.
-  return new Date(year, month, 0).getDate();
-}
 
-const months = {
-  january: 0,
-  february: 1,
-  march: 2,
-  april: 3,
-  may: 4,
-  june: 5,
-  july: 6,
-  august: 7,
-  september: 8,
-  october: 9,
-  november: 10,
-  december: 11,
-};
-
-let choices = [];
+let monthChoices = [];
 for (let m in months) {
   let option = {
     name: m.toLocaleUpperCase(),
     value: m,
   };
-  choices.push(option);
+  monthChoices.push(option);
 }
-
 
 let activityChoices = [];
 for(const item of uniqueActivities){
@@ -85,7 +65,7 @@ let isContinue = true;
 while (isContinue) {
   const answer = await select({
     message: "Select a month",
-    choices: choices,
+    choices: monthChoices,
     default: new Date()
       .toLocaleString("default", {
         month: "long",
@@ -95,11 +75,7 @@ while (isContinue) {
   const activityData = await select({
     message: "Select a activity",
     choices: activityChoices,
-    default: new Date()
-      .toLocaleString("default", {
-        month: "long",
-      })
-      .toLowerCase(),
+    default: 'walking',
   });
 
   let month = answer.toLowerCase();
