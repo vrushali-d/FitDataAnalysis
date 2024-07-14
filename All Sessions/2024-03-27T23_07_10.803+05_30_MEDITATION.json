@@ -1,0 +1,15 @@
+{
+  "fitnessActivity": "meditation",
+  "startTime": "2024-03-27T17:37:10.803Z",
+  "endTime": "2024-03-27T17:47:10.803Z",
+  "duration": "600s",
+  "segment": [{
+    "fitnessActivity": "meditation",
+    "startTime": "2024-03-27T17:37:10.803Z",
+    "endTime": "2024-03-27T17:47:10.803Z"
+  }],
+  "aggregate": [{
+    "metricName": "com.google.calories.expended",
+    "floatValue": 10.100694651405016
+  }]
+}

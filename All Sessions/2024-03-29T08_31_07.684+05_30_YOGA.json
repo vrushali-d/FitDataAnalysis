@@ -1,0 +1,18 @@
+{
+  "fitnessActivity": "yoga",
+  "startTime": "2024-03-29T03:01:07.684Z",
+  "endTime": "2024-03-29T03:16:07.684Z",
+  "duration": "900s",
+  "segment": [{
+    "fitnessActivity": "yoga",
+    "startTime": "2024-03-29T03:01:07.684Z",
+    "endTime": "2024-03-29T03:16:07.684Z"
+  }],
+  "aggregate": [{
+    "metricName": "com.google.calories.expended",
+    "floatValue": 38.75
+  }, {
+    "metricName": "com.google.active_minutes",
+    "intValue": 14
+  }]
+}

@@ -1,0 +1,21 @@
+{
+  "fitnessActivity": "strength_training",
+  "startTime": "2024-03-28T03:23:58.623Z",
+  "endTime": "2024-03-28T03:30:21.455Z",
+  "duration": "381.596s",
+  "segment": [{
+    "fitnessActivity": "strength_training",
+    "startTime": "2024-03-28T03:23:58.623Z",
+    "endTime": "2024-03-28T03:30:20.219Z"
+  }],
+  "aggregate": [{
+    "metricName": "com.google.heart_minutes.summary",
+    "floatValue": 6.0
+  }, {
+    "metricName": "com.google.calories.expended",
+    "floatValue": 23.02256631987078
+  }, {
+    "metricName": "com.google.active_minutes",
+    "intValue": 6
+  }]
+}
